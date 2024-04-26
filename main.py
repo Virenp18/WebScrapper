@@ -10,7 +10,7 @@ htmlContent = r.content
 
 soup = BeautifulSoup(htmlContent,'html.parser')
 teamone_batting_array = []
-# getting the invaders B batting scorecard
+# to get first team batting info type ballByBallTeam1 and for second type ballByBallTeam2 inside {"id" : "type here.."}
 invaders_batting = soup.find("div", {"id": "ballByBallTeam2"})
 if invaders_batting:
     tbody_tag = invaders_batting.find("tbody")
@@ -32,4 +32,5 @@ if invaders_batting:
                 teamone_batting_array.append(player_detail)
 
 json_data = json.dumps(teamone_batting_array)
+# get all the data in form of JSON
 print(json_data)
