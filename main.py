@@ -6,8 +6,6 @@ url = "https://cricclubs.com/ScarboroughCA/viewScorecard.do?matchId=5253&clubId=
 r = requests.get(url)
 htmlContent = r.content
 
-# print(htmlContent)
-
 soup = BeautifulSoup(htmlContent,'html.parser')
 teamone_batting_array = []
 # to get first team batting info type ballByBallTeam1 and for second type ballByBallTeam2 inside {"id" : "type here.."}
